@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 import { I18nService } from '../../services/i18n.service';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-habilidades',
@@ -21,7 +22,7 @@ export class HabilidadesComponent implements OnInit {
   habilidades: Habilidad[] = [];
   loading = false;
   isAdmin$: Observable<boolean>;
-  private readonly backendBaseUrl = 'http://localhost:8085';
+  private readonly backendBaseUrl = environment.apiUrl;
   private readonly categoryOrder: Array<Habilidad['category']> = ['frontend', 'backend', 'database', 'tools', 'other'];
   grouped: { category: Habilidad['category']; items: Habilidad[] }[] = [];
 

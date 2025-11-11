@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,8 +14,18 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
   profileImage = 'images/Alberto.jpeg';
+
+  ngOnInit(): void {
+    // Block scroll on home page
+    document.body.classList.add('home-no-scroll');
+  }
+
+  ngOnDestroy(): void {
+    // Restore scroll when leaving home page
+    document.body.classList.remove('home-no-scroll');
+  }
 
   onImageError(event: any) {
     console.error('Error loading image:', this.profileImage);

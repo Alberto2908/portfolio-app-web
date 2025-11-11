@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HabilidadesService } from '../../services/habilidades.service';
 import { Habilidad } from '../../models/habilidad.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -57,7 +58,7 @@ export class HabilidadesAdminComponent {
           });
           // Setup preview if image exists
           if (h.image) {
-            const normalized = h.image.startsWith('/uploads') ? `http://localhost:8085${h.image}` : h.image;
+            const normalized = h.image.startsWith('/uploads') ? `${environment.apiUrl}${h.image}` : h.image;
             this.previewUrl = normalized;
             this.imageFileName = h.image.split('/').pop() || h.image;
           }

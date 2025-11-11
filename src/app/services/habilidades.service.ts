@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Habilidad } from '../models/habilidad.model';
+import { environment } from '../../environments/environment';
 
 interface Page<T> {
   content: T[];
@@ -13,7 +14,7 @@ interface Page<T> {
 
 @Injectable({ providedIn: 'root' })
 export class HabilidadesService {
-  private readonly baseUrl = 'http://localhost:8085/api/habilidades';
+  private readonly baseUrl = `${environment.apiUrl}/api/habilidades`;
 
   constructor(private http: HttpClient) {}
 

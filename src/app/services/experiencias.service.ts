@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../models/experiencia.model';
+import { environment } from '../../environments/environment';
 
 interface PageResponse<T> {
   content: T[];
@@ -9,13 +10,15 @@ interface PageResponse<T> {
   totalPages: number;
   size: number;
   number: number;
+  first: boolean;
+  last: boolean;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExperienciasService {
-  private apiUrl = 'http://localhost:8085/api/experiencias';
+  private apiUrl = `${environment.apiUrl}/api/experiencias`;
 
   constructor(private http: HttpClient) {}
 
@@ -45,6 +48,6 @@ export class ExperienciasService {
   upload(file: File): Observable<{ url: string }> {
     const formData = new FormData();
     formData.append('file', file);
-    return this.http.post<{ url: string }>('http://localhost:8085/api/habilidades/upload', formData, { withCredentials: true });
+    return this.http.post<{ url: string }>(`${environment.apiUrl}/api/habilidades/upload`, formData, { withCredentials: true });
   }
 }

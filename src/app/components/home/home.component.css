@@ -6,6 +6,8 @@
   flex: 1 0 auto; /* occupy remaining height under header and above footer */
   min-height: auto;
   padding: 20px;
+  margin-top: 60px; /* Espacio para evitar solapamiento con header */
+  margin-bottom: 40px; /* Espacio para evitar solapamiento con footer */
 }
 
 .presentation-card {
@@ -80,16 +82,71 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+    margin-top: 120px; /* Mucho más espacio en móvil para evitar solapamiento */
+    margin-bottom: 60px;
+  }
+
+  .presentation-card {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
   .card-content {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
+  }
+
+  .profile-image img {
+    width: 100px;
+    height: 100px;
   }
 
   .text-content p {
     text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
   .presentation-card ::ng-deep .ant-card-body {
-    padding: 30px 25px;
+    padding: 25px 20px;
+  }
+
+  .button-container {
+    margin-top: 25px;
+  }
+
+  .portfolio-button {
+    font-size: 15px;
+    height: 44px;
+    padding: 0 24px;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 10px;
+    margin-top: 140px; /* Aún más espacio para pantallas muy pequeñas */
+    margin-bottom: 70px;
+  }
+
+  .presentation-card {
+    margin: 0 5px;
+  }
+
+  .presentation-card ::ng-deep .ant-card-body {
+    padding: 20px 15px;
+  }
+
+  .text-content p {
+    font-size: 14px;
+  }
+
+  .profile-image img {
+    width: 90px;
+    height: 90px;
   }
 }

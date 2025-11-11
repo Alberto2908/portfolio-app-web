@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap, catchError, of } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 export interface AuthResponse {
   authenticated: boolean;
@@ -19,7 +20,7 @@ export interface LoginRequest {
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_URL = 'http://localhost:8085/api/auth';
+  private readonly API_URL = `${environment.apiUrl}/api/auth`;
   
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   private isAdminSubject = new BehaviorSubject<boolean>(false);
@@ -127,7 +128,7 @@ export class AuthService {
   }
 
   changePassword(currentPassword: string, newPassword: string): Observable<void> {
-    const url = 'http://localhost:8085/api/users/me/password';
+    const url = `${environment.apiUrl}/api/users/me/password`;
     return this.http.put<void>(url, { currentPassword, newPassword }, { withCredentials: true });
   }
 }

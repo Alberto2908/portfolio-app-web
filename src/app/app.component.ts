@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { SelectorIdiomaComponent } from './components/selector-idioma/selector-idioma.component';
+import { I18nService } from './services/i18n.service';
 
 interface Particle {
   x: number;
@@ -25,6 +26,31 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
   private particles: Particle[] = [];
 
+  constructor(private i18nService: I18nService) {
+    // El I18nService se inicializa automáticamente
+  }
+
+  private getResponsiveParticleCount(): number {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const isLandscape = width > height;
+    
+    // Detectar tipo de dispositivo - optimizado para móviles/tablets, normal para desktop
+    if (width <= 480) {
+      // Móvil vertical - muy pocas partículas
+      return 24; // 1/40 de las originales (960/40)
+    } else if (width <= 768) {
+      // Móvil horizontal o tablet pequeña vertical
+      return 48; // 1/20 de las originales (960/20)
+    } else if (width <= 1024) {
+      // Tablet horizontal - muy pocas partículas
+      return 60; // 1/16 de las originales (960/16)
+    } else {
+      // Desktop (cualquier tamaño) - todas las partículas originales
+      return 960; // Cantidad completa original como antes
+    }
+  }
+
   ngAfterViewInit(): void {
     const canvas = this.canvasRef.nativeElement;
     const ctx = canvas.getContext('2d')!;
@@ -33,8 +59,8 @@ export class AppComponent implements AfterViewInit {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Initialize particles
-    const numParticles = 960; // doubled from 480
+    // Initialize particles with responsive count
+    const numParticles = this.getResponsiveParticleCount();
     for (let i = 0; i < numParticles; i++) {
       this.particles.push({
         x: Math.random() * canvas.width,
@@ -70,10 +96,32 @@ export class AppComponent implements AfterViewInit {
       }
     });
 
-    // Resize handler
+    // Resize handler with particle count adjustment
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      
+      // Recalculate optimal particle count for new screen size
+      const newParticleCount = this.getResponsiveParticleCount();
+      const currentCount = this.particles.length;
+      
+      if (newParticleCount < currentCount) {
+        // Remove excess particles for better performance
+        this.particles = this.particles.slice(0, newParticleCount);
+      } else if (newParticleCount > currentCount) {
+        // Add more particles if screen got bigger
+        for (let i = currentCount; i < newParticleCount; i++) {
+          this.particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: 0,
+            vy: 0,
+            size: 2 + Math.random() * 4,
+            color: Math.random(),
+            phase: Math.random() * Math.PI * 2
+          });
+        }
+      }
     });
 
     // Color palette
@@ -107,19 +155,29 @@ export class AppComponent implements AfterViewInit {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         // Repulsion from other particles to prevent clustering
-        this.particles.forEach((other: Particle, j: number) => {
+        // Optimize for mobile: only check nearby particles
+        const isMobile = window.innerWidth <= 768;
+        const checkRadius = isMobile ? 30 : 40;
+        const maxChecks = isMobile ? 5 : 10; // Limit checks on mobile
+        let checksPerformed = 0;
+        
+        for (let j = 0; j < this.particles.length && checksPerformed < maxChecks; j++) {
           if (i !== j) {
+            const other = this.particles[j];
             const odx = p.x - other.x;
             const ody = p.y - other.y;
-            const odist = Math.sqrt(odx * odx + ody * ody);
-
-            if (odist < 40 && odist > 0) {
-              const repelForce = (40 - odist) * 0.008;
+            
+            // Quick distance check before expensive sqrt
+            const odistSq = odx * odx + ody * ody;
+            if (odistSq < checkRadius * checkRadius && odistSq > 0) {
+              const odist = Math.sqrt(odistSq);
+              const repelForce = (checkRadius - odist) * (isMobile ? 0.006 : 0.008);
               p.vx += (odx / odist) * repelForce;
               p.vy += (ody / odist) * repelForce;
+              checksPerformed++;
             }
           }
-        });
+        }
 
         // Behavior depends on mouse movement
         if (isMouseMoving) {

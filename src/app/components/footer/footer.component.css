@@ -113,3 +113,35 @@
     gap: 10px;
   }
 }
+
+/* Adjustments for mobile and tablet in home page */
+@media (max-width: 1024px) {
+  .home-no-scroll .site-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 600px;
+    margin-top: 0;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-no-scroll .site-footer {
+    bottom: 15px;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-no-scroll .site-footer {
+    bottom: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .home-no-scroll .footer-right {
+    padding: 10px 14px;
+  }
+}

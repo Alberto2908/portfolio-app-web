@@ -2,18 +2,18 @@
   <div class="footer-inner">
     <div class="footer-right">
       <div class="footer-row">
-        <div class="footer-copy">© {{ currentYear }} Alberto Cabello Lasheras — Full Stack Developer</div>
+        <div class="footer-copy">{{ 'footer.copy' | translate : { year: currentYear } }}</div>
         <div class="footer-links" *ngIf="showBackToTop">
-          <button class="back-to-top" (click)="scrollTop()" aria-label="Back to top">
+          <button class="back-to-top" (click)="scrollTop()" [attr.aria-label]="'footer.back_to_top' | translate">
             <span nz-icon nzType="arrow-up" nzTheme="outline"></span>
           </button>
         </div>
       </div>
       <div class="footer-row footer-secondary" *ngIf="showShortcuts">
-        <a (click)="scrollToSection('experiencia')" class="footer-text-link">Experiencia</a>
-        <a (click)="scrollToSection('formacion')" class="footer-text-link">Formación</a>
-        <a (click)="scrollToSection('habilidades')" class="footer-text-link">Habilidades</a>
-        <a (click)="scrollToSection('contacto')" class="footer-text-link">Contacto</a>
+        <a (click)="scrollToSection('experiencia')" class="footer-text-link">{{ 'footer.links.experiencia' | translate }}</a>
+        <a (click)="scrollToSection('formacion')" class="footer-text-link">{{ 'footer.links.formacion' | translate }}</a>
+        <a (click)="scrollToSection('habilidades')" class="footer-text-link">{{ 'footer.links.habilidades' | translate }}</a>
+        <a (click)="scrollToSection('contacto')" class="footer-text-link">{{ 'footer.links.contacto' | translate }}</a>
       </div>
     </div>
   </div>

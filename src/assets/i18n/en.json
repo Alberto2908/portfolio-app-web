@@ -1,0 +1,22 @@
+{
+  "footer": {
+    "copy": "© {{year}} Alberto Cabello Lasheras — Full Stack Developer",
+    "back_to_top": "Back to top",
+    "links": {
+      "experiencia": "Experience",
+      "formacion": "Education",
+      "habilidades": "Skills",
+      "contacto": "Contact"
+    }
+  },
+  "home": {
+    "intro": "My name is",
+    "name": "Alberto Cabello Lasheras",
+    "description": "I am a Fullstack developer experienced in designing and building web and mobile applications using TypeScript (Angular) and Java (SpringBoot). I master relational (MySQL) and non-relational (MongoDB) databases, ensuring solid code and deployments. I bring creativity through 3D modeling and interactive environments. I work proactively in teams, have coordinated groups under pressure, and stand out for my communication, responsibility, and fast adoption of new technologies.",
+    "cta_button": "Go to portfolio"
+  },
+  "topbar": {
+    "change_password": "Change password",
+    "logout": "Logout"
+  }
+}
