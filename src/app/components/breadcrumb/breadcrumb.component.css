@@ -1,0 +1,49 @@
+.breadcrumb-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(90, 75, 130, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Force all breadcrumb text to white */
+:host ::ng-deep .ant-breadcrumb,
+:host ::ng-deep .ant-breadcrumb *,
+:host ::ng-deep .ant-breadcrumb a,
+:host ::ng-deep .ant-breadcrumb span,
+:host ::ng-deep .ant-breadcrumb-link {
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .ant-breadcrumb a {
+  transition: color 0.25s ease;
+}
+
+:host ::ng-deep .ant-breadcrumb a:hover {
+  color: #e5b7ff !important;
+}
+
+:host ::ng-deep .ant-breadcrumb-separator {
+  color: rgba(229, 183, 255, 0.7) !important;
+}
+
+:host ::ng-deep .ant-breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}

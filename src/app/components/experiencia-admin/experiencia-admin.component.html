@@ -1,0 +1,75 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h2 class="admin-title">Administrador de Experiencias</h2>
+  </div>
+
+  <div class="admin-card">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-grid">
+      <div class="form-field full-width">
+        <label for="empresa">Empresa</label>
+        <input id="empresa" type="text" formControlName="empresa" placeholder="Empresa" />
+        <div class="error" *ngIf="form.get('empresa')?.invalid && form.get('empresa')?.touched">Empresa requerida</div>
+      </div>
+
+      <div class="form-field full-width">
+        <label for="puesto">Puesto</label>
+        <input id="puesto" type="text" formControlName="puesto" placeholder="Puesto" />
+        <div class="error" *ngIf="form.get('puesto')?.invalid && form.get('puesto')?.touched">Puesto requerido</div>
+      </div>
+
+      <div class="form-field full-width">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" formControlName="descripcion" rows="4" placeholder="Descripción"></textarea>
+        <div class="error" *ngIf="form.get('descripcion')?.invalid && form.get('descripcion')?.touched">Descripción requerida</div>
+      </div>
+
+      <div class="form-field">
+        <label for="mesInicio">Mes de Inicio</label>
+        <select id="mesInicio" formControlName="mesInicio">
+          <option value="">Selecciona un mes</option>
+          <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+        </select>
+        <div class="error" *ngIf="form.get('mesInicio')?.invalid && form.get('mesInicio')?.touched">Mes de inicio requerido</div>
+      </div>
+
+      <div class="form-field">
+        <label for="anoInicio">Año de Inicio</label>
+        <input id="anoInicio" type="number" formControlName="anoInicio" placeholder="Año de inicio" />
+        <div class="error" *ngIf="form.get('anoInicio')?.invalid && form.get('anoInicio')?.touched">Año de inicio requerido</div>
+      </div>
+
+      <div class="form-field full-width">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="trabajoActivo" />
+          <span>Trabajo actual</span>
+        </label>
+      </div>
+
+      <div class="form-field" *ngIf="!form.get('trabajoActivo')?.value">
+        <label for="mesFin">Mes de Fin</label>
+        <select id="mesFin" formControlName="mesFin">
+          <option value="">Selecciona un mes</option>
+          <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+        </select>
+        <div class="error" *ngIf="form.get('mesFin')?.invalid && form.get('mesFin')?.touched">Mes de fin requerido</div>
+      </div>
+
+      <div class="form-field" *ngIf="!form.get('trabajoActivo')?.value">
+        <label for="anoFin">Año de Fin</label>
+        <input id="anoFin" type="number" formControlName="anoFin" placeholder="Año de fin" />
+        <div class="error" *ngIf="form.get('anoFin')?.invalid && form.get('anoFin')?.touched">Año de fin requerido</div>
+      </div>
+
+      <div class="form-actions center" *ngIf="!editing; else editActions">
+        <button class="submit-button" type="submit" [disabled]="loading">{{ loading ? 'Guardando...' : 'Guardar' }}</button>
+        <button type="button" class="dz-clear" (click)="salir()" [disabled]="loading">Salir</button>
+      </div>
+      <ng-template #editActions>
+        <div class="form-actions center">
+          <button class="submit-button" type="submit" [disabled]="loading">{{ loading ? 'Guardando...' : 'Modificar' }}</button>
+          <button type="button" class="dz-clear" (click)="salir()" [disabled]="loading">Salir</button>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+</div>

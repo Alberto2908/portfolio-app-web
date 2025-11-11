@@ -1,0 +1,183 @@
+.formacion-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+@media (max-width: 480px) {
+  .formacion-section {
+    padding: 20px 12px;
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+.add-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  color: #2d1b4e;
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  transition: all .25s ease;
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #e0a0d9, #d18ee3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.35);
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(216, 145, 207, 0.6), rgba(199, 125, 219, 0.3));
+}
+
+.timeline-item { position: relative; margin-bottom: 32px; }
+
+.timeline-marker {
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  box-shadow: 0 0 0 4px rgba(216, 145, 207, 0.2);
+}
+
+.timeline-content {
+  background: rgba(70, 60, 100, 0.5);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all .3s ease;
+}
+
+.timeline-content:hover {
+  border-color: rgba(216, 145, 207, 0.4);
+  box-shadow: 0 8px 24px rgba(216, 145, 207, 0.15);
+  transform: translateX(4px);
+}
+
+/* Redesigned card layout */
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.degree-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.meta-chips {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 14px;
+}
+
+.period-chip { background: rgba(216, 145, 207, 0.12); border-color: rgba(216, 145, 207, 0.35); }
+.center-chip { background: rgba(125, 160, 219, 0.12); border-color: rgba(125, 160, 219, 0.35); }
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exp-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.exp-info { flex: 1; }
+.company-name { color: #ffffff; font-size: 18px; font-weight: 600; margin: 0 0 4px 0; }
+.period { color: rgba(255, 255, 255, 0.7); font-size: 13px; }
+
+.exp-actions { display: flex; gap: 8px; }
+.action-icon {
+  width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 10px; background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12); color: #e9d5ff; cursor: pointer; transition: all .2s ease;
+}
+.action-icon:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(216, 145, 207, 0.25); }
+.action-icon.edit { background: linear-gradient(135deg, #d891cf, #c77ddb); color: #2d1b4e; border: none; }
+.action-icon.delete { color: #ffb4c3; border-color: rgba(255, 180, 195, 0.25); }
+.action-icon.delete:hover { border-color: rgba(255, 180, 195, 0.6); box-shadow: 0 6px 16px rgba(255, 180, 195, 0.25); }
+
+.empty-state, .loading-state { text-align: center; padding: 40px 20px; color: rgba(255, 255, 255, 0.6); font-size: 16px; }
+
+@media (max-width: 768px) {
+  .timeline-container { padding-left: 28px; }
+  .timeline-container::before { left: 11px; }
+  .timeline-marker { left: -20px; top: 12px; width: 10px; height: 10px; }
+  .card-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .degree-title { font-size: 16px; }
+  .card-actions { align-self: flex-end; }
+}
+
+@media (max-width: 480px) {
+  .card-top {
+    align-items: center;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 8px;
+    align-self: center;
+  }
+
+  .action-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

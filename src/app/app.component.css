@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  background-color: #000;
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 0;
+  pointer-events: all;
+}
+
+router-outlet {
+  display: none;
+}
+
+:host ::ng-deep router-outlet ~ * {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+:host ::ng-deep router-outlet ~ * * {
+  pointer-events: auto;
+}

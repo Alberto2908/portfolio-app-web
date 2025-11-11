@@ -1,0 +1,144 @@
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 0 0 0; /* top spacer to avoid breadcrumb overlap */
+  color: #ffffff;
+  width: 100%;
+}
+
+/* Top bar to host session actions (e.g., logout) */
+.portfolio-topbar {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 12px 16px;
+  box-sizing: border-box;
+}
+
+.password-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  color: #2d1b4e;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.25);
+  transition: all .2s ease;
+}
+
+.password-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(216, 145, 207, 0.35);
+}
+
+.password-btn:active {
+  transform: translateY(1px);
+}
+
+.logout-btn {
+  background: transparent;
+  color: #f5eaff;
+  border: 1px solid rgba(216, 145, 207, 0.55);
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s ease;
+  box-shadow: 0 4px 12px rgba(216, 145, 207, 0.18);
+}
+
+.logout-btn:hover {
+  background: rgba(216, 145, 207, 0.10);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.28);
+}
+
+.logout-btn:active {
+  transform: translateY(1px);
+}
+
+/* Visit Counter */
+.visit-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(70, 55, 100, 0.5), rgba(90, 70, 120, 0.4));
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(200, 150, 220, 0.15);
+  border-radius: 10px;
+  padding: 8px 14px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.counter-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.counter-value {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.counter-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.portfolio-container h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+}
+
+.portfolio-container p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+app-experiencia,
+app-formacion,
+app-habilidades,
+app-contacta-conmigo {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .portfolio-container { padding-top: 72px; }
+  .portfolio-topbar { padding: 0 12px 10px 12px; }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .portfolio-container { padding-top: 88px; }
+}
+
+@media (min-width: 768px) {
+  .portfolio-container { padding-top: 70px; }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-container { padding-top: 80px; }
+}

@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-right">
+      <div class="footer-row">
+        <div class="footer-copy">© {{ currentYear }} Alberto Cabello Lasheras — Full Stack Developer</div>
+        <div class="footer-links" *ngIf="showBackToTop">
+          <button class="back-to-top" (click)="scrollTop()" aria-label="Back to top">
+            <span nz-icon nzType="arrow-up" nzTheme="outline"></span>
+          </button>
+        </div>
+      </div>
+      <div class="footer-row footer-secondary" *ngIf="showShortcuts">
+        <a (click)="scrollToSection('experiencia')" class="footer-text-link">Experiencia</a>
+        <a (click)="scrollToSection('formacion')" class="footer-text-link">Formación</a>
+        <a (click)="scrollToSection('habilidades')" class="footer-text-link">Habilidades</a>
+        <a (click)="scrollToSection('contacto')" class="footer-text-link">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>

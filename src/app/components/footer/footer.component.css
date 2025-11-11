@@ -1,0 +1,115 @@
+/* Wrapper */
+.site-footer {
+  width: 100%;
+  padding: 24px 16px 32px 16px;
+  box-sizing: border-box;
+  background: transparent;
+  margin-top: auto; /* push footer to the bottom within flex column layout */
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  width: 100%;
+  text-align: center; /* center inline-block wrapper */
+}
+
+/* Right-aligned, within centered max-width container */
+.footer-right {
+  display: inline-flex; /* shrink to content */
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  max-width: 1000px;
+  margin: 0 auto; /* keep just in case wider screens */
+  background: linear-gradient(135deg, rgba(70, 55, 100, 0.5), rgba(90, 70, 120, 0.4));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(200, 150, 220, 0.15);
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea superior sutil coherente con las info-cards */
+.footer-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(200, 150, 220, 0.5), transparent);
+  opacity: 0.8;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.footer-secondary {
+  margin-top: 8px;
+  gap: 12px;
+}
+
+.footer-copy {
+  color: #ffffff;
+  opacity: 0.92;
+  font-size: 13px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-icon,
+.back-to-top {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, rgba(70, 55, 100, 0.5), rgba(90, 70, 120, 0.4));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(200, 150, 220, 0.15);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0c3f0;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.footer-icon:hover,
+.back-to-top:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 150, 220, 0.35);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.footer-text-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color .2s ease;
+  cursor: pointer;
+}
+
+.footer-text-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .footer-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

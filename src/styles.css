@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+.swal-portfolio-popup {
+  background: #0b0b12;
+  color: #f5f3ff;
+  border: 1px solid #2b1c3f;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25);
+}
+
+.swal-portfolio-title {
+  color: #ffffff;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.swal-portfolio-header {
+  width: 100%;
+  padding: 14px 18px;
+  margin: -1.25em -1.25em 0.75em -1.25em;
+  background: linear-gradient(135deg, #7c3aed, #a855f7, #ec4899);
+}
+
+.swal-portfolio-html {
+  color: #e9d5ff;
+}
+
+.swal-portfolio-actions .swal2-confirm {
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d1b4e;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.swal-portfolio-actions .swal2-confirm:hover {
+  background: linear-gradient(135deg, #e0a0d9, #d18ee3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.4);
+}
+
+.swal-portfolio-actions .swal2-cancel {
+  background: transparent;
+  color: #c4b5fd;
+  border: 1px solid #2b1c3f;
+}
+
+.swal2-icon.swal2-success { border-color: #8b5cf6; color: #8b5cf6; }
+.swal2-icon.swal2-error { border-color: #ef4444; color: #ef4444; }
+
+.swal2-loader {
+  border-color: #7c3aed #2b1c3f #2b1c3f #2b1c3f !important;
+}

@@ -1,0 +1,27 @@
+<div class="home-page" style="display: flex; flex-direction: column; min-height: 100vh;">
+  <div class="home-container">
+    <nz-card class="presentation-card">
+      <div class="card-content">
+        <div class="profile-image">
+          <img 
+            [src]="profileImage" 
+            alt="Alberto Cabello Lasheras"
+            (error)="onImageError($event)">
+        </div>
+        <div class="text-content">
+          <p>
+            {{ 'home.intro' | translate }} <strong>{{ 'home.name' | translate }}</strong>, {{ 'home.description' | translate }}
+          </p>
+        </div>
+      </div>
+    </nz-card>
+    
+    <div class="button-container">
+      <button nz-button nzType="primary" nzSize="large" class="portfolio-button" routerLink="/portfolio">
+        {{ 'home.cta_button' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <app-footer style="margin-top: auto;" [showBackToTop]="false" [showShortcuts]="false"></app-footer>
+</div>

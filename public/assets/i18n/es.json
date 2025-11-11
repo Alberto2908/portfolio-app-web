@@ -1,0 +1,116 @@
+{
+  "breadcrumb": {
+    "home": "Inicio",
+    "portfolio": "Portfolio",
+    "habilidades_admin": "Habilidades Admin",
+    "experiencias_admin": "Experiencias Admin",
+    "formaciones_admin": "Formaciones Admin",
+    "cambiar_contrasena": "Cambiar Contraseña"
+  },
+  "topbar": {
+    "change_password": "Cambiar contraseña",
+    "logout": "Cerrar sesión"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "subtitle": "Accede al panel de administración",
+    "username": "Usuario",
+    "username_placeholder": "Introduce tu usuario",
+    "password": "Contraseña",
+    "password_placeholder": "Introduce tu contraseña",
+    "login_button": "Iniciar sesión",
+    "back_button": "Volver",
+    "error_required": "Este campo es obligatorio",
+    "error_login": "Usuario o contraseña incorrectos"
+  },
+  "habilidades": {
+    "title": "Habilidades Técnicas",
+    "categories": {
+      "frontend": "FRONTEND",
+      "backend": "BACKEND",
+      "database": "BASE DE DATOS",
+      "tools": "HERRAMIENTAS"
+    }
+  },
+  "experiencia": {
+    "title": "Experiencia Profesional",
+    "current": "Actualidad"
+  },
+  "formacion": {
+    "title": "Formación Académica"
+  },
+  "contacto": {
+    "title": "Contacta Conmigo",
+    "subtitle": "¿Tienes algún proyecto en mente? ¡Hablemos!",
+    "name": "Nombre",
+    "name_placeholder": "Tu nombre",
+    "email": "Email",
+    "email_placeholder": "tu@email.com",
+    "subject": "Asunto",
+    "subject_placeholder": "¿En qué puedo ayudarte?",
+    "message": "Mensaje",
+    "message_placeholder": "Cuéntame sobre tu proyecto...",
+    "send_button": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado correctamente!",
+    "error": "Error al enviar el mensaje"
+  },
+  "change_password": {
+    "title": "Cambiar contraseña",
+    "current_password": "Contraseña actual",
+    "new_password": "Nueva contraseña",
+    "new_password_placeholder": "Mínimo 8 caracteres",
+    "confirm_password": "Confirmar nueva contraseña",
+    "confirm_password_placeholder": "Repite la nueva contraseña",
+    "save_button": "Guardar",
+    "saving": "Guardando...",
+    "cancel_button": "Cancelar",
+    "success": "Contraseña actualizada correctamente",
+    "error": "No se pudo cambiar la contraseña",
+    "error_mismatch": "Las contraseñas no coinciden"
+  },
+  "months": {
+    "enero": "Enero",
+    "febrero": "Febrero",
+    "marzo": "Marzo",
+    "abril": "Abril",
+    "mayo": "Mayo",
+    "junio": "Junio",
+    "julio": "Julio",
+    "agosto": "Agosto",
+    "septiembre": "Septiembre",
+    "octubre": "Octubre",
+    "noviembre": "Noviembre",
+    "diciembre": "Diciembre"
+  },
+  "contact": {
+    "title": "Contacta conmigo",
+    "email": "Email",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "cv": "CV",
+    "download_cv": "Descargar CV",
+    "social_networks": "Mis redes",
+    "form_email_label": "Tu dirección de email:",
+    "form_email_placeholder": "Dirección de email",
+    "form_subject_label": "Asunto:",
+    "form_subject_placeholder": "Asunto del mensaje",
+    "form_message_label": "Mensaje:",
+    "form_message_placeholder": "Ingrese el mensaje",
+    "submit_button": "Enviar mensaje",
+    "sending_title": "Enviando...",
+    "sending_text": "Por favor, espera unos segundos",
+    "success_title": "¡Mensaje enviado!",
+    "success_text": "Gracias por contactarme, te responderé lo antes posible.",
+    "error_title": "No se pudo enviar",
+    "error_text": "Inténtalo de nuevo en unos minutos.",
+    "accept_button": "Aceptar",
+    "understood_button": "Entendido"
+  },
+  "home": {
+    "intro": "Mi nombre es",
+    "name": "Alberto Cabello Lasheras",
+    "description": "soy un desarrollador Fullstack con experiencia en diseño y construcción de aplicaciones web y móviles usando TypeScript (Angular) y Java (SpringBoot). Domino bases relacionales (MySQL) y no relacionales (MongoDB), asegurando código sólido y despliegues. Aporto creatividad gracias al modelado 3D y entornos interactivos. Trabajo en equipo de forma proactiva, he coordinado grupos bajo presión y destaco por mi comunicación, responsabilidad y rápida adopción de nuevas tecnologías.",
+    "cta_button": "Acceder a portfolio"
+  }
+}

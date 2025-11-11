@@ -1,0 +1,116 @@
+<div class="contacta-container" id="contacto">
+  <h2 class="section-title">{{ 'contact.title' | translate }}</h2>
+
+  <!-- Contact Form Section -->
+  <div class="form-section">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <div class="form-row">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label class="form-label">
+            <span class="required-mark">*</span> {{ 'contact.form_email_label' | translate }}
+          </label>
+          <input
+            class="form-input"
+            formControlName="email"
+            [placeholder]="'contact.form_email_placeholder' | translate"
+            type="email">
+        </div>
+
+        <!-- Subject Field -->
+        <div class="form-group">
+          <label class="form-label">
+            <span class="required-mark">*</span> {{ 'contact.form_subject_label' | translate }}
+          </label>
+          <input
+            class="form-input"
+            formControlName="subject"
+            [placeholder]="'contact.form_subject_placeholder' | translate">
+        </div>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <label class="form-label">
+          <span class="required-mark">*</span> {{ 'contact.form_message_label' | translate }}
+        </label>
+        <textarea
+          class="form-input form-textarea"
+          formControlName="message"
+          [placeholder]="'contact.form_message_placeholder' | translate"
+          rows="6">
+        </textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="!contactForm.valid">
+        {{ 'contact.submit_button' | translate }}
+      </button>
+    </form>
+  </div>
+
+  <!-- Contact Info Grid -->
+  <div class="contact-info-grid">
+    <!-- Email Card -->
+    <div class="info-card">
+      <div class="icon-wrapper">
+        <span nz-icon nzType="mail" nzTheme="outline" class="info-icon"></span>
+      </div>
+      <div class="info-content">
+        <h3>{{ 'contact.email' | translate }}</h3>
+        <p>{{ contactInfo.email }}</p>
+      </div>
+    </div>
+
+    <!-- Phone Card -->
+    <div class="info-card">
+      <div class="icon-wrapper">
+        <span nz-icon nzType="phone" nzTheme="outline" class="info-icon"></span>
+      </div>
+      <div class="info-content">
+        <h3>{{ 'contact.phone' | translate }}</h3>
+        <p>{{ contactInfo.phone }}</p>
+      </div>
+    </div>
+
+    <!-- Location Card -->
+    <div class="info-card">
+      <div class="icon-wrapper">
+        <span nz-icon nzType="environment" nzTheme="outline" class="info-icon" #locationIcon (click)="onLocationClick()"></span>
+      </div>
+      <div class="info-content">
+        <h3>{{ 'contact.location' | translate }}</h3>
+        <p>{{ contactInfo.location }}</p>
+      </div>
+    </div>
+
+    <!-- CV Card -->
+    <a (click)="downloadCV()" class="info-card cv-card">
+      <div class="icon-wrapper">
+        <span nz-icon nzType="file-text" nzTheme="outline" class="info-icon"></span>
+      </div>
+      <div class="info-content">
+        <h3>{{ 'contact.cv' | translate }}</h3>
+        <p>{{ 'contact.download_cv' | translate }}</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Social Networks Section -->
+  <div class="social-section">
+    <h3 class="social-title">{{ 'contact.social_networks' | translate }}</h3>
+    <div class="social-links">
+      <a [href]="contactInfo.github" target="_blank" class="social-link">
+        <span nz-icon nzType="github" nzTheme="fill" class="social-icon"></span>
+        <span class="social-label">GitHub</span>
+      </a>
+      <a [href]="contactInfo.linkedin" target="_blank" class="social-link">
+        <span nz-icon nzType="linkedin" nzTheme="fill" class="social-icon"></span>
+        <span class="social-label">LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</div>

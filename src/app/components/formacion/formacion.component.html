@@ -1,0 +1,48 @@
+<div class="formacion-section" id="formacion">
+  <div class="section-header">
+    <h2 class="section-title">{{ 'formacion.title' | translate }}</h2>
+    <a *ngIf="isAdmin$ | async" class="add-btn" routerLink="/portfolio/admin/formaciones" [attr.aria-label]="'formacion.title' | translate">+</a>
+  </div>
+
+  <div class="timeline-container" *ngIf="!loading && formaciones.length > 0">
+    <div class="timeline-item" *ngFor="let f of formaciones; trackBy: trackByFormacionId">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <div class="card-top">
+          <div class="card-title">
+            <h3 class="degree-title">{{ getNombre(f) }}</h3>
+            <div class="meta-chips">
+              <span class="chip period-chip">{{ formatPeriod(f) }}</span>
+              <span class="chip center-chip">{{ f.centro }}</span>
+            </div>
+          </div>
+          <div class="card-actions" *ngIf="isAdmin$ | async">
+            <button type="button" class="action-icon edit" (click)="onEdit(f)" aria-label="Editar" title="Editar">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/>
+              </svg>
+            </button>
+            <button type="button" class="action-icon delete" (click)="onDelete(f)" aria-label="Borrar" title="Borrar">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                <path d="M10 11v6"/>
+                <path d="M14 11v6"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="!loading && formaciones.length === 0">
+    <p>No hay formación registrada</p>
+  </div>
+
+  <div class="loading-state" *ngIf="loading">
+    <p>Cargando formación...</p>
+  </div>
+</div>

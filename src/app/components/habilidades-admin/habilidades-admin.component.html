@@ -1,0 +1,60 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h2 class="admin-title">Administrador de Habilidades</h2>
+  </div>
+
+  <div class="admin-card">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-grid">
+      <div class="form-field">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" formControlName="name" placeholder="Nombre" />
+        <div class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Nombre requerido</div>
+      </div>
+
+      <div class="form-field">
+        <label for="image">Imagen</label>
+        <input #fileInput id="image" type="file" (change)="onFileSelected($event)" accept="image/*" hidden />
+        <div class="dropzone" 
+             [class.dragover]="dragOver"
+             (click)="fileInput.click()"
+             (dragover)="onDragOver($event)"
+             (dragleave)="onDragLeave($event)"
+             (drop)="onDrop($event)">
+          <ng-container *ngIf="previewUrl; else emptyState">
+            <img [src]="previewUrl" alt="Previsualización" class="preview" />
+            <div class="dz-meta">
+              <span class="dz-name">{{ imageFile?.name }}</span>
+              <button type="button" class="dz-clear" (click)="clearImage($event)">Quitar</button>
+            </div>
+          </ng-container>
+          <ng-template #emptyState>
+            <div class="dz-icon">📁</div>
+            <div class="dz-text">
+              Arrastra una imagen aquí o <span class="dz-link">haz clic para seleccionar</span>
+            </div>
+            <div class="file-hint">JPG, PNG o SVG. Máx. 5MB. Tamaño recomendado 256x256.</div>
+          </ng-template>
+        </div>
+        <div class="error" *ngIf="imageError">Selecciona una imagen válida</div>
+      </div>
+
+      <div class="form-field">
+        <label for="category">Categoría</label>
+        <select id="category" formControlName="category">
+          <option *ngFor="let c of categorias" [value]="c.value">{{ c.label }}</option>
+        </select>
+      </div>
+
+      <div class="form-actions center" *ngIf="!editing; else editActions">
+        <button class="submit-button" type="submit" [disabled]="loading || uploading">{{ uploading ? 'Subiendo...' : 'Guardar' }}</button>
+        <button type="button" class="dz-clear" (click)="salir()" [disabled]="loading || uploading">Salir</button>
+      </div>
+      <ng-template #editActions>
+        <div class="form-actions center">
+          <button class="submit-button" type="submit" [disabled]="loading || uploading">{{ uploading ? 'Subiendo...' : 'Modificar' }}</button>
+          <button type="button" class="dz-clear" (click)="salir()" [disabled]="loading || uploading">Salir</button>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+</div>

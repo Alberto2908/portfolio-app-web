@@ -1,0 +1,95 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto; /* occupy remaining height under header and above footer */
+  min-height: auto;
+  padding: 20px;
+}
+
+.presentation-card {
+  max-width: 900px;
+  background: rgba(90, 75, 130, 0.55) !important;
+  backdrop-filter: blur(12px);
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.presentation-card ::ng-deep .ant-card-body {
+  padding: 40px 50px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-image {
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  display: block;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content p {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+}
+
+.text-content strong {
+  font-weight: 600;
+}
+
+.button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.portfolio-button {
+  font-size: 16px;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #d891cf, #c77ddb) !important;
+  border: none !important;
+  color: #2d1b4e !important;
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.4);
+  transition: all 0.3s ease;
+}
+
+.portfolio-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content p {
+    text-align: center;
+  }
+
+  .presentation-card ::ng-deep .ant-card-body {
+    padding: 30px 25px;
+  }
+}

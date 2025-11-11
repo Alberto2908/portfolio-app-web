@@ -1,0 +1,116 @@
+{
+  "breadcrumb": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "habilidades_admin": "Skills Admin",
+    "experiencias_admin": "Experience Admin",
+    "formaciones_admin": "Education Admin",
+    "cambiar_contrasena": "Change Password"
+  },
+  "topbar": {
+    "change_password": "Change password",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Sign in",
+    "subtitle": "Access the administration panel",
+    "username": "Username",
+    "username_placeholder": "Enter your username",
+    "password": "Password",
+    "password_placeholder": "Enter your password",
+    "login_button": "Sign in",
+    "back_button": "Back",
+    "error_required": "This field is required",
+    "error_login": "Incorrect username or password"
+  },
+  "habilidades": {
+    "title": "Technical Skills",
+    "categories": {
+      "frontend": "FRONTEND",
+      "backend": "BACKEND",
+      "database": "DATABASE",
+      "tools": "TOOLS"
+    }
+  },
+  "experiencia": {
+    "title": "Professional Experience",
+    "current": "Present"
+  },
+  "formacion": {
+    "title": "Academic Education"
+  },
+  "contacto": {
+    "title": "Contact Me",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "name": "Name",
+    "name_placeholder": "Your name",
+    "email": "Email",
+    "email_placeholder": "your@email.com",
+    "subject": "Subject",
+    "subject_placeholder": "How can I help you?",
+    "message": "Message",
+    "message_placeholder": "Tell me about your project...",
+    "send_button": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending message"
+  },
+  "change_password": {
+    "title": "Change password",
+    "current_password": "Current password",
+    "new_password": "New password",
+    "new_password_placeholder": "Minimum 8 characters",
+    "confirm_password": "Confirm new password",
+    "confirm_password_placeholder": "Repeat the new password",
+    "save_button": "Save",
+    "saving": "Saving...",
+    "cancel_button": "Cancel",
+    "success": "Password updated successfully",
+    "error": "Could not change password",
+    "error_mismatch": "Passwords do not match"
+  },
+  "months": {
+    "enero": "January",
+    "febrero": "February",
+    "marzo": "March",
+    "abril": "April",
+    "mayo": "May",
+    "junio": "June",
+    "julio": "July",
+    "agosto": "August",
+    "septiembre": "September",
+    "octubre": "October",
+    "noviembre": "November",
+    "diciembre": "December"
+  },
+  "contact": {
+    "title": "Contact me",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "cv": "CV",
+    "download_cv": "Download CV",
+    "social_networks": "My networks",
+    "form_email_label": "Your email address:",
+    "form_email_placeholder": "Email address",
+    "form_subject_label": "Subject:",
+    "form_subject_placeholder": "Message subject",
+    "form_message_label": "Message:",
+    "form_message_placeholder": "Enter your message",
+    "submit_button": "Send message",
+    "sending_title": "Sending...",
+    "sending_text": "Please wait a few seconds",
+    "success_title": "Message sent!",
+    "success_text": "Thank you for contacting me, I will reply as soon as possible.",
+    "error_title": "Could not send",
+    "error_text": "Please try again in a few minutes.",
+    "accept_button": "Accept",
+    "understood_button": "Understood"
+  },
+  "home": {
+    "intro": "My name is",
+    "name": "Alberto Cabello Lasheras",
+    "description": "I am a Fullstack developer experienced in designing and building web and mobile applications using TypeScript (Angular) and Java (SpringBoot). I master relational (MySQL) and non-relational (MongoDB) databases, ensuring solid code and deployments. I bring creativity through 3D modeling and interactive environments. I work proactively in teams, have coordinated groups under pressure, and excel in communication, responsibility, and rapid adoption of new technologies.",
+    "cta_button": "Access portfolio"
+  }
+}

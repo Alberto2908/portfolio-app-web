@@ -1,0 +1,270 @@
+.admin-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.admin-title {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.admin-card {
+  background: rgba(70, 60, 100, 0.5);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  color: #e9d5ff;
+  font-size: 14px;
+}
+
+.form-field input,
+.form-field select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-radius: 10px;
+  height: 42px;
+  padding: 0 12px;
+  outline: none;
+}
+
+/* File input button theming (modern browsers) */
+.form-field input[type="file"] {
+  padding: 0 8px;
+}
+
+.form-field input[type="file"]::file-selector-button {
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  color: #2d1b4e;
+  border: none;
+  border-radius: 8px;
+  height: 32px;
+  padding: 0 12px;
+  margin-right: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-field input[type="file"]::-webkit-file-upload-button { /* Safari */
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  color: #2d1b4e;
+  border: none;
+  border-radius: 8px;
+  height: 32px;
+  padding: 0 12px;
+  margin-right: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Select theming */
+.form-field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(135deg, rgba(216,145,207,0.25), rgba(199,125,219,0.25)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23e9d5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right 10px center;
+  background-size: auto, 18px;
+  padding-right: 40px;
+}
+
+.form-field select:hover,
+.form-field input:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.form-field select:focus,
+.form-field input:focus {
+  border-color: rgba(216, 145, 207, 0.6);
+  box-shadow: 0 0 0 3px rgba(216, 145, 207, 0.15);
+}
+
+/* Attempt to style dropdown options (supported in most Blink browsers) */
+.form-field select option {
+  background-color: #1a1328;
+  color: #f5f3ff;
+}
+
+.form-field input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.error {
+  color: #ffb4c3;
+  font-size: 12px;
+}
+
+/* Dropzone styles */
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 140px;
+  border: 1px dashed rgba(233, 213, 255, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.dropzone:hover {
+  border-color: rgba(233, 213, 255, 0.6);
+}
+
+.dropzone.dragover {
+  background: rgba(216, 145, 207, 0.12);
+  border-color: rgba(216, 145, 207, 0.8);
+  box-shadow: 0 0 0 3px rgba(216, 145, 207, 0.15) inset;
+}
+
+.dz-icon {
+  font-size: 28px;
+}
+
+.dz-text {
+  color: #e9d5ff;
+  font-size: 14px;
+}
+
+.dz-link {
+  color: #e9d5ff;
+  text-decoration: underline;
+}
+
+.file-hint {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+
+.preview {
+  max-width: 160px;
+  max-height: 120px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.25);
+}
+
+.dz-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dz-name {
+  color: #f5f3ff;
+  font-size: 12px;
+}
+
+.dz-clear {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e9d5ff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.dz-clear:hover {
+  border-color: rgba(216, 145, 207, 0.8);
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.form-actions.center {
+  justify-content: center;
+  gap: 12px;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  color: #2d1b4e;
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  padding: 0 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+/* Make the secondary action visually aligned with the primary */
+.form-actions .dz-clear {
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Equal minimum widths for both buttons when centered */
+.form-actions.center .submit-button,
+.form-actions.center .dz-clear {
+  min-width: 160px;
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(216, 145, 207, 0.35);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    padding: 20px 12px;
+  }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-actions { justify-content: stretch; }
+  .form-actions.center { flex-direction: column; }
+  .submit-button { width: 100%; }
+  .form-actions .dz-clear { width: 100%; }
+  .admin-card { padding: 16px; }
+  .admin-title { font-size: 22px; }
+}

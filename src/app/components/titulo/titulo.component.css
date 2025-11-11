@@ -1,0 +1,24 @@
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.title span:after{
+  content: "Desarrollador Web";
+  animation: words 6s infinite;
+}
+
+@keyframes words {
+  0%, 33% {
+    content: "Desarrollador Web";
+    color: #00ff7f;
+  }
+  34%, 66% {
+    content: "Diseñador Creativo";
+    color: #ff00ff;
+  }
+  67%, 100% {
+    content: "Creador Digital";
+    color: #ffd700;
+  }
+}

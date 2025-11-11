@@ -1,0 +1,69 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h2 class="admin-title">Administrador de Formación</h2>
+  </div>
+
+  <div class="admin-card">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-grid">
+      <div class="form-field full-width">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre" placeholder="Nombre" />
+        <div class="error" *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched">Nombre requerido</div>
+      </div>
+
+      <div class="form-field full-width">
+        <label for="centro">Centro</label>
+        <input id="centro" type="text" formControlName="centro" placeholder="Centro" />
+        <div class="error" *ngIf="form.get('centro')?.invalid && form.get('centro')?.touched">Centro requerido</div>
+      </div>
+
+      <div class="form-field">
+        <label for="mesInicio">Mes de Inicio</label>
+        <select id="mesInicio" formControlName="mesInicio">
+          <option value="">Selecciona un mes</option>
+          <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+        </select>
+        <div class="error" *ngIf="form.get('mesInicio')?.invalid && form.get('mesInicio')?.touched">Mes de inicio requerido</div>
+      </div>
+
+      <div class="form-field">
+        <label for="anoInicio">Año de Inicio</label>
+        <input id="anoInicio" type="number" formControlName="anoInicio" placeholder="Año de inicio" />
+        <div class="error" *ngIf="form.get('anoInicio')?.invalid && form.get('anoInicio')?.touched">Año de inicio requerido</div>
+      </div>
+
+      <div class="form-field full-width">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="cursandoAhora" />
+          <span>Cursando actualmente</span>
+        </label>
+      </div>
+
+      <div class="form-field" *ngIf="!form.get('cursandoAhora')?.value">
+        <label for="mesFin">Mes de Fin</label>
+        <select id="mesFin" formControlName="mesFin">
+          <option value="">Selecciona un mes</option>
+          <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+        </select>
+        <div class="error" *ngIf="form.get('mesFin')?.invalid && form.get('mesFin')?.touched">Mes de fin requerido</div>
+      </div>
+
+      <div class="form-field" *ngIf="!form.get('cursandoAhora')?.value">
+        <label for="anoFin">Año de Fin</label>
+        <input id="anoFin" type="number" formControlName="anoFin" placeholder="Año de fin" />
+        <div class="error" *ngIf="form.get('anoFin')?.invalid && form.get('anoFin')?.touched">Año de fin requerido</div>
+      </div>
+
+      <div class="form-actions center" *ngIf="!editing; else editActions">
+        <button class="submit-button" type="submit" [disabled]="loading">{{ loading ? 'Guardando...' : 'Guardar' }}</button>
+        <button type="button" class="dz-clear" (click)="salir()" [disabled]="loading">Salir</button>
+      </div>
+      <ng-template #editActions>
+        <div class="form-actions center">
+          <button class="submit-button" type="submit" [disabled]="loading">{{ loading ? 'Guardando...' : 'Modificar' }}</button>
+          <button type="button" class="dz-clear" (click)="salir()" [disabled]="loading">Salir</button>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+</div>

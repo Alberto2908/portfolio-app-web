@@ -1,0 +1,168 @@
+.admin-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    padding: 20px 12px;
+    min-height: calc(100vh - 72px);
+  }
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.admin-title {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.admin-card {
+  background: rgba(70, 60, 100, 0.5);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field { display: flex; flex-direction: column; gap: 8px; }
+.form-field.full-width { grid-column: 1 / -1; }
+
+.form-field label { color: #e9d5ff; font-size: 14px; }
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 0 12px;
+  outline: none;
+}
+
+.form-field input,
+.form-field select { height: 42px; }
+
+.form-field textarea { padding: 12px; font-family: inherit; resize: vertical; }
+
+.form-field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(135deg, rgba(216,145,207,0.25), rgba(199,125,219,0.25)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23e9d5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right 10px center;
+  background-size: auto, 18px;
+  padding-right: 40px;
+}
+
+.form-field select:hover,
+.form-field input:hover,
+.form-field textarea:hover { border-color: rgba(255, 255, 255, 0.22); }
+
+.form-field select:focus,
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: rgba(216, 145, 207, 0.6);
+  box-shadow: 0 0 0 3px rgba(216, 145, 207, 0.15);
+}
+
+.form-field select option { background-color: #1a1328; color: #f5f3ff; }
+
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: rgba(255, 255, 255, 0.5); }
+
+.checkbox-label { display: flex; align-items: center; gap: 10px; cursor: pointer; color: #e9d5ff; }
+.checkbox-label input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; }
+
+.error { color: #ffb4c3; font-size: 12px; }
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.form-actions.center { justify-content: center; gap: 12px; }
+
+.submit-button {
+  background: linear-gradient(135deg, #d891cf, #c77ddb);
+  color: #2d1b4e;
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  padding: 0 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.form-actions .dz-clear {
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e9d5ff;
+  cursor: pointer;
+}
+
+.form-actions.center .submit-button,
+.form-actions.center .dz-clear { min-width: 160px; }
+
+.submit-button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(216, 145, 207, 0.35); }
+.dz-clear:hover { border-color: rgba(216, 145, 207, 0.8); }
+.submit-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width: 720px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-actions { justify-content: stretch; }
+  .form-actions.center { flex-direction: column; }
+  .submit-button { width: 100%; }
+  .form-actions .dz-clear { width: 100%; }
+  .admin-card { padding: 16px; }
+  .admin-title { font-size: 22px; }
+}
+
+/* Tablet portrait */
+@media (min-width: 481px) and (max-width: 767px) {
+  .admin-container { min-height: calc(100vh - 88px); }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .admin-container { min-height: calc(100vh - 70px); }
+}
+
+/* Wide desktop */
+@media (min-width: 1200px) {
+  .admin-container { min-height: calc(100vh - 80px); }
+}

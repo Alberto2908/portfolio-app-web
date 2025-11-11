@@ -1,0 +1,25 @@
+<div class="portfolio-container">
+  <div class="portfolio-topbar">
+    <div *ngIf="isAdmin$ | async" class="visit-counter">
+      <span class="counter-icon">👁️</span>
+      <span class="counter-value">{{ visitCounter?.totalVisits || 0 }}</span>
+      <span class="counter-label">visitas</span>
+    </div>
+    <a *ngIf="isAdmin$ | async" class="password-btn" routerLink="/portfolio/admin/password" [title]="'topbar.change_password' | translate">
+      {{ 'topbar.change_password' | translate }}
+    </a>
+    <button *ngIf="isAdmin$ | async" class="logout-btn" (click)="logout()" [title]="'topbar.logout' | translate">
+      {{ 'topbar.logout' | translate }}
+    </button>
+  </div>
+
+  <app-experiencia></app-experiencia>
+
+  <app-formacion></app-formacion>
+
+  <app-habilidades></app-habilidades>
+
+  <app-contacta-conmigo></app-contacta-conmigo>
+
+  <app-footer></app-footer>
+</div>
